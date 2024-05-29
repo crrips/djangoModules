@@ -1,4 +1,4 @@
-if __name__ == '__main__':
+def convert_to_dict():
     d = [
     ('Hendrix' , '1942'),
     ('Allman' , '1946'),
@@ -21,3 +21,9 @@ if __name__ == '__main__':
     ('Thompson' , '1949'),
     ('Burton' , '1939')
     ]
+
+    return dict(d)
+
+if __name__ == '__main__':
+    for key, value in convert_to_dict().items():
+        print(f'{key} : {value}')
