@@ -10,6 +10,6 @@ echo "************ Installing requirements... ************"
 
 python -m pip install --upgrade pip
 
-python -m pip install -r requirement.txt
+python -m pip install -r requirements.txt
 
-python Django/manage.py runserver
+python manage.py runserver

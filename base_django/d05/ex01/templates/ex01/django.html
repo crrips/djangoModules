@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+{% block title %}Ex01: Django, framework web.{% endblock %}
+
+{% block content %}
+<h1>Django and Its History</h1>
+
+    <h2>What is Django?</h2>
+    <p>Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It was designed to help developers take applications from concept to completion as quickly as possible.</p>
+
+    <h2>History of Django</h2>
+    <p>Django was created in the fall of 2003 by Adrian Holovaty and Simon Willison at the Lawrence Journal-World newspaper. The framework was named after the jazz guitarist Django Reinhardt.</p>
+
+    <p>Initially, it was an internal project used to manage the newspaper’s website. The developers found that they were able to build new features quickly and decided to release Django as an open-source project in July 2005. This allowed developers around the world to use and contribute to the framework.</p>
+
+    <p>Since its release, Django has grown in popularity and has been used to build many high-traffic websites such as Instagram, Pinterest, and The Washington Times. It continues to be maintained by the Django Software Foundation, which was established to support its development.</p>
+
+    <h2>Key Features of Django</h2>
+    <ul>
+        <li>Object-Relational Mapping (ORM): Django provides a powerful ORM that allows developers to interact with databases using Python code instead of writing raw SQL queries.</li>
+        <li>Automatic Admin Interface: Django automatically generates a robust admin interface based on the models defined in the application, which can be used to manage content.</li>
+        <li>Scalability: Django is designed to handle high-traffic sites and can scale to meet the demands of large applications.</li>
+        <li>Security: Django includes built-in protection against many common security threats such as SQL injection, cross-site scripting, and cross-site request forgery.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Django is a powerful and flexible web framework that has become a popular choice for developers looking to build robust web applications quickly. Its rich feature set and active community make it an excellent tool for web development.</p>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fifty shades of bic.</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            height: 40px;
+            width: 80px;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th>noir</th><th>rouge</th><th>bleu</th><th>vert</th></tr>
+        {{ table_rows|safe }}
+    </table>
+</body>
+</html>

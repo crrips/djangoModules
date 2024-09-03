@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+{% block title %}Ex01: Display process of a static page.{% endblock %}
+
+{% block content %}
+<h1>Displaying a Static Web Page with Django</h1>
+
+<h2>Introduction</h2>
+<p>This page describes the process of displaying a static web page using Django, starting from the request and ending with the response. The example demonstrates how a simple template is rendered by a view in Django.</p>
+
+<h2>Steps in the Process</h2>
+<ol>
+    <li><strong>URL Configuration:</strong> The process begins with defining a URL pattern that maps a URL to a specific view. This is done in the <code>urls.py</code> file.</li>
+    <li><strong>View Function:</strong> The URL pattern points to a view function in the <code>views.py</code> file. This view function handles the request and returns a response.</li>
+    <li><strong>Template Rendering:</strong> The view function uses a template to generate the HTML content. The template is a simple HTML file stored in the templates directory.</li>
+    <li><strong>HTTP Response:</strong> The rendered template is returned as an HTTP response to the client's browser, which then displays the static web page.</li>
+</ol>
+
+<h2>Example Code</h2>
+<h3>1. URL Configuration</h3>
+<p>In the <code>urls.py</code> file:</p>
+<pre>
+<code>
+from django.urls import path
+from . import views
+
+urlpatterns = [
+path('static-page/', views.static_page, name='static_page'),
+]
+</code>
+</pre>
+
+<h3>2. View Function</h3>
+<p>In the <code>views.py</code> file:</p>
+<pre>
+<code>
+from django.shortcuts import render
+
+def static_page(request):
+return render(request, 'static_page.html')
+</code>
+</pre>
+
+<h3>3. Template Rendering</h3>
+<p>In the <code>static_page.html</code> file, located in the templates directory:</p>
+<pre>
+<code>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Static Page</title>
+</head>
+<body>
+<h1>Welcome to the Static Page</h1>
+<p>This is a simple static web page rendered by Django.</p>
+</body>
+</html>
+</code>
+</pre>
+
+<h2>Explanation</h2>
+<p>When a user navigates to <code>/static-page/</code>, the following sequence of events occurs:</p>
+<ol>
+    <li>The URL pattern defined in <code>urls.py</code> matches the request URL and calls the <code>static_page</code> view function.</li>
+    <li>The <code>static_page</code> view function in <code>views.py</code> handles the request and uses the <code>render</code> function to generate the HTML content from the <code>static_page.html</code> template.</li>
+    <li>The rendered HTML content is returned as an HTTP response to the client's browser.</li>
+    <li>The client's browser displays the static web page with the content defined in the template.</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>This simple example demonstrates how Django handles a request to display a static web page using a view and a template. The process involves URL configuration, view function handling, template rendering, and returning an HTTP response.</p>
+{% endblock %}
