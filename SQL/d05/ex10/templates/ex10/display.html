@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <title>Display</title>
+      {% csrf_token %}
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #f4f4f9;
+      }
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          margin-top: 20px;
+        }
+        
+        th, td {
+          padding: 12px 15px;
+          text-align: center;
+          border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+          background-color: #2d43ef;
+          color: white;
+          font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+          background-color: #d7dcff;
+        }
+        
+        td {
+          color: #333;
+        }
+        
+        th:first-child, td:first-child {
+          border-left: none;
+        }
+        
+        th:last-child, td:last-child {
+          border-right: none;
+        }
+
+        select {
+          padding: 10px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        input {
+          padding: 10px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          width: 98%;
+          margin-bottom: 20px;
+      }
+      button {
+          background-color: #2d43ef;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: bold;
+          transition: background-color 0.3s ease, transform 0.1s ease;
+          width: 100%;
+      }
+      button:hover {
+          background-color: #1f32c9;
+          transform: scale(1.05);
+      }
+      button:active {
+          background-color: #1a2ba7;
+          transform: scale(0.95);
+      }
+      </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form method="post">
+        {% csrf_token %}
+        <label>Min release date:</label>
+        <input type="date" name="min_release_date" placeholder="Min release date">
+        <label>Max release date:</label>
+        <input type="date" name="max_release_date" placeholder="Max release date">
+        <input type="number" name="planet_diameter" placeholder="Planet diameter greater than">
+        <label>Select a gender:</label>
+        <select name="gender">
+            {% for gender in genders %}
+                <option value="{{ gender }}">{{ gender }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Find</button>
+      </form>
+    </div>
+
+    </body>
