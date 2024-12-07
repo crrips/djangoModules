@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+    {% if name %}
+        <meta http-equiv="refresh" content="42">
+    {% endif %}
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block home %}
+    {% if user.is_authenticated %}
+        <span class="navbar-brand mb-0 h1">Hello, {{ user.username }}!</span>
+        <span class="navbar-text me-2">Your reputation: {{ user.reputation }}</span>
+        <span class="navbar-text me-2 {% if user.reputation >= 15 %}text-success{% else %}text-muted{% endif %}">Downvoting: 15</span>        
+        <span class="navbar-text me-2 {% if user.reputation >= 30 %}text-success{% else %}text-muted{% endif %}">Deleting: 30</span>
+    {% else %}
+        <span class="navbar-brand mb-0 h1">Hello, {{ name }}!</span>
+    {% endif %}
+{% endblock %}
+
+{% block buttons %}
+    {% if user.is_authenticated %}
+        <form method="POST">
+            {% csrf_token %}
+            <button {% if not new_tip_status %} name="new_tip" {% else %} name="cancel_tip" {% endif %} type="submit" class="btn btn-secondary me-2">Create Tip</button>
+        </form>
+        <form method="POST">
+            {% csrf_token %}
+            <button href="{% url 'home' %}" name="logout" type="submit" class="btn btn-primary w-100">Logout</a>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-outline-primary me-2">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to My AgaDjango Site!</h1>
+<p class="lead">This is the homepage. Navigate through the menu to explore more.</p>
+<div class="d-flex align-items-start">
+    {% if user.is_authenticated %}
+    <img 
+    class="rounded me-3 shadow cropped" 
+    src="https://chumley.barstoolsports.com/union/2024/11/20/dc884-17262004042678.06fe99d7.webp?fit=bounds&format=pjpg&auto=webp&quality=85%2C75" 
+    alt="Image">
+<style>
+    .cropped {
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
+
+    {% else %}
+        <img class="rounded me-3 shadow" src="https://us-tuna-sounds-images.voicemod.net/29c70a17-9264-44d5-bec6-35c6686abe3b-1731337064441.jpeg" alt="Image" style="width: auto; height: auto;">
+    {% endif %}
+    
+    <div>
+        {% if new_tip_status and new_tip %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <h3>Create Tip</h3>
+                    {{ new_tip.content }}
+                </div>
+                <div class="d-flex gap-3">
+                    <button type="submit" class="btn btn-primary" name="create_tip">Create</button>
+                </form>
+                <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-secondary" name="cancel_tip">Cancel</button>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="ms-4">
+        <h3>Latest Tips</h3>
+        <div>
+            {% if not tips %}
+                <p class="text-muted mb-0">No tips available.</p>
+            {% else %}
+                {% for tip in tips %}
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="card-title mb-0">Tip by {{ tip.author }}</h5>
+                        <form method="POST" class="mb-0">
+                            {% csrf_token %}
+                            <button type="submit" name="delete_tip" value="{{ tip.id }}" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p class="card-text">{{ tip.content }}</p>
+                        <p class="text-muted">Date: {{ tip.date }}</p>
+                        <div class="d-flex gap-3 align-items-center">
+                            <form method="POST" class="mb-0">
+                                {% csrf_token %}
+                                <button type="submit" name="upvote_tip" value="{{ tip.id }}" class="btn btn-success btn-sm">Upvote</button>
+                            </form>
+                            <span>{{ tip.upvotes }} upvotes</span>
+                            <form method="POST" class="mb-0">
+                                {% csrf_token %}
+                                <button type="submit" name="downvote_tip" value="{{ tip.id }}" class="btn btn-warning btn-sm">Downvote</button>
+                            </form>
+                            <span>{{ tip.downvotes }} downvotes</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

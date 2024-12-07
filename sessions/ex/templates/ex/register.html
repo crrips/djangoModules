@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card p-4 shadow" style="width: 400px;">
+        <h3 class="text-center mb-4">Register</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="error" class="form-label text-danger">{{ error }}</label>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                {{ form.username }}
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                {{ form.password }}
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                {{ form.password_confirm }}
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+        <div class="text-center mt-3">
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

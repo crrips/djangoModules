@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PYTHON="/usr/bin/python3"
-DIR="django_venv"
+DIR="venv"
 
 $PYTHON -m venv $DIR
 source $DIR/bin/activate

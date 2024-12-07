@@ -59,10 +59,10 @@ def populate(request):
                 INSERT INTO ex04_movies (title, episode_nb, opening_crawl, director, producer, release_date)
                 VALUES (%s, %s, %s, %s, %s, %s);
             ''', movie)
+            conn.commit()
         except Exception as e:
             return HttpResponse(e.args)
     
-    conn.commit()
     cursor.close()
     
     return HttpResponse('OK')
