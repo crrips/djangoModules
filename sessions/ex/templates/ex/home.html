@@ -11,7 +11,7 @@
 {% block home %}
     {% if user.is_authenticated %}
         <span class="navbar-brand mb-0 h1">Hello, {{ user.username }}!</span>
-        <span class="navbar-text me-2">Your reputation: {{ user.reputation }}</span>
+        <span class="navbar-text me-3 text-light bg-primary rounded-pill px-3 py-1 shadow-sm">Your reputation: {{ user.reputation }}</span>          
         <span class="navbar-text me-2 {% if user.reputation >= 15 %}text-success{% else %}text-muted{% endif %}">Downvoting: 15</span>        
         <span class="navbar-text me-2 {% if user.reputation >= 30 %}text-success{% else %}text-muted{% endif %}">Deleting: 30</span>
     {% else %}
