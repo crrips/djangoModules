@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Articles" %}{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card p-4 shadow" style="width: 400px;">
+        <h3 class="text-center mb-4">{% trans "Register" %}</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="error" class="form-label text-danger">{{ error }}</label>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">{% trans "Username" %}</label>
+                {{ form.username }}
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">{% trans "Password" %}</label>
+                {{ form.password1 }}
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">{% trans "Confirm Password" %}</label>
+                {{ form.password2 }}
+            </div>
+            {% if messages %}
+            <div class="alert alert-danger mt-3 d-flex align-items-center" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <div>
+                    {% for message in messages %}
+                        <p class="mb-0">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary w-100">{% trans "Register" %}</button>
+        </form>
+        <div class="text-center mt-3">
+            <p>{% trans "Already have an account?" %} <a href="{% url 'login' %}">{% trans "Login" %}</a></p>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

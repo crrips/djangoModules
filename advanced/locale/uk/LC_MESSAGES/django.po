@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-28 13:37+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+
+msgid "Articles"
+msgstr "Статті"
+
+msgid "Favourites"
+msgstr "Вибране"
+
+msgid "Publications"
+msgstr "Публікації"
+
+msgid "Share your writings"
+msgstr "Поділіться своїми творами"
+
+msgid "Switch"
+msgstr "Перемкнути"
+
+msgid "Logged as"
+msgstr "Ви увійшли як"
+
+msgid "Logout"
+msgstr "Вийти"
+
+msgid "Login"
+msgstr "Увійти"
+
+msgid "Username"
+msgstr "Ім'я користувача"
+
+msgid "Register"
+msgstr "Зареєструватися"
+
+msgid "Title"
+msgstr "Заголовок"
+
+msgid "Synopsis"
+msgstr "Синопсис"
+
+msgid "Writer"
+msgstr "Автор"
+
+msgid "Created"
+msgstr "Створено"
+
+msgid "When"
+msgstr "Коли"
+
+msgid "Content"
+msgstr "Зміст"
+
+msgid "Read"
+msgstr "Читати"
+
+msgid "ago"
+msgstr "тому"
+
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "хвилина"
+msgstr[1] "хвилини"
+msgstr[2] "хвилин"
+
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "година"
+msgstr[1] "години"
+msgstr[2] "годин"
+
+msgid "day"
+msgid_plural "days"
+msgstr[0] "день"
+msgstr[1] "дня"
+msgstr[2] "днів"
+
+msgid "week"
+msgid_plural "weeks"
+msgstr[0] "тиждень"
+msgstr[1] "тижня"
+msgstr[2] "тижнів"
+
+msgid "month"
+msgid_plural "months"
+msgstr[0] "місяць"
+msgstr[1] "місяці"
+msgstr[2] "місяців"
+
+msgid "year"
+msgid_plural "years"
+msgstr[0] "рік"
+msgstr[1] "роки"
+msgstr[2] "років"
+
+msgid "January"
+msgstr "Січня"
+
+msgid "February"
+msgstr "Лютого"
+
+msgid "March"
+msgstr "Березня"
+
+msgid "April"
+msgstr "Квітня"
+
+msgid "May"
+msgstr "Травня"
+
+msgid "June"
+msgstr "Червня"
+
+msgid "July"
+msgstr "Липня"
+
+msgid "August"
+msgstr "Серпня"
+
+msgid "September"
+msgstr "Вересня"
+
+msgid "October"
+msgstr "Жовтня"
+
+msgid "November"
+msgstr "Листопада"
+
+msgid "December"
+msgstr "Грудня"
+
+msgid "No articles found."
+msgstr "Статей не знайдено."
+
+msgid "New article"
+msgstr "Нова стаття"
+
+msgid "Detail"
+msgstr "Деталі"
+
+msgid "Publish New Article"
+msgstr "Опублікувати нову статтю"
+
+msgid "Publish"
+msgstr "Опублікувати"
+
+msgid "Home"
+msgstr "Головна"
+
+msgid "Already have an account?"
+msgstr "Вже маєте обліковий запис?"
+
+msgid "Confirm Password"
+msgstr "Підтвердити пароль"
